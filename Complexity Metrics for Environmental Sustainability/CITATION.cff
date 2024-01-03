@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Raubitzek"
+  given-names: "Sebastian"
+  orcid: "https://orcid.org/0000-0003-2206-9263"
+- family-names: "Mallinger"
+  given-names: "Kevin"
+  orcid: "https://orcid.org/0000-0002-3031-505X"
+title: "Complexity Metrics for Environmental Sciences"
+version: 1.0.0
+doi: xxxxxx
+date-released: 2024-01-03
+url: "https://github.com/CORE-Research-Group/Complexity-Metrics-for-Environmental-Sciences"

@@ -1,0 +1,24 @@
+{
+    "best_parameters": {
+        "bagging_temperature": 1,
+        "border_count": 120,
+        "depth": 5,
+        "iterations": 325,
+        "l2_leaf_reg": 7,
+        "learning_rate": 0.05
+    },
+    "best_cv_score": 0.6690145712973844,
+    "mean_squared_error": 9.544108306556218,
+    "mean_absolute_error": 2.1235810598317193,
+    "r2_score": 0.5014123296569342,
+    "feature_importances": {
+        "dim_3": 78.25546716049331,
+        "dim_2": 13.10507712115903,
+        "dim_1": 8.639455718347675
+    },
+    "phase_space_embedding": {
+        "embedding_dimension": 3,
+        "time_delay": 1
+    },
+    "time_series_plot": "time_series_prediction_plot_td1_ed3.png"
+}
