@@ -11,7 +11,7 @@ The script is structured into the following key steps:
 4. Feature Selection: The top 5 features based on mutual information scores are selected for model training.
 5. Data Splitting: The dataset is split into training and testing subsets, which is crucial for evaluating the machine learning model.
 6. Model Training: Two RandomForestClassifier models are trained - one with all features and another with selected features.
-7. Iterative Model Evaluation: The models are evaluated across 10 iterations to assess their stability and performance consistency.
+7. Iterative Model Evaluation: The models are evaluated across 100 iterations to assess their stability and performance consistency.
 8. Visualization of Results: Classification accuracies for each iteration are visually compared through a line plot, and the results are saved as an EPS file.
 9. Result Storage: The average accuracies and iteration-wise scores are stored in a JSON file for further analysis.
 
@@ -33,10 +33,16 @@ from sklearn.metrics import accuracy_score
 # Step 2: Data Loading
 print("Loading the dataset...")
 dataset = fetch_openml(data_id=339)
-X, y = dataset.data, dataset.target
+
+X = dataset.data
+y = dataset.target
+
+if isinstance(X, pd.DataFrame):
+    X = X.select_dtypes(include=[np.number])  # select only numeric features
+if isinstance(y, pd.Series) and y.dtype == 'object':
+    y = LabelEncoder().fit_transform(y)  # encode non-numeric labels
 X = np.array(X)  # Ensure X is a NumPy array
 
-print(y)
 
 # Initialize variables to accumulate scores
 scores_all = []
