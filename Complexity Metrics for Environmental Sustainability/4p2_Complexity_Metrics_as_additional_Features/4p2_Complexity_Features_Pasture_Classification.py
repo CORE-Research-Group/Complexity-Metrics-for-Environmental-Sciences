@@ -112,6 +112,7 @@ def calculate_complexity_features(X, use_sample_entropy=True, use_approx_entropy
 
     if use_sample_entropy and 'sample_entropy' not in X.columns:
         print('Sample Entropy')
+        X_original = X_original.astype(np.float32)
         sample_entropy = X_original.apply(lambda row: ant.sample_entropy(row), axis=1)
         X['sample_entropy'] = sample_entropy
 
